@@ -1,9 +1,9 @@
 # Vite 2.x + Vue 3.x + TypeScript
 
-[![Author](https://img.shields.io/badge/author-XPoet-orange.svg)](https://github.com/XPoet)
-[![License](https://img.shields.io/github/license/XPoet/vite-vue3-starter.svg)](https://github.com/XPoet/vite-vue3-starter/blob/master/LICENSE)
-[![Stars](https://img.shields.io/github/stars/XPoet/vite-vue3-starter)](https://github.com/XPoet/vite-vue3-starter)
-[![Deploy](https://github.com/XPoet/vite-vue3-starter/workflows/deploy/badge.svg)](https://github.com/XPoet/vite-vue3-starter/actions/workflows/deploy.yml)
+[![Author](https://img.shields.io/badge/author-lzngithub-orange.svg)](https://github.com/lzngithub)
+[![License](https://img.shields.io/github/license/lzngithub/vue3-vite-ts.svg)](https://github.com/lzngithub/vue3-vite-ts/blob/master/LICENSE)
+[![Stars](https://img.shields.io/github/stars/lzngithub/vue3-vite-ts)](https://github.com/lzngithub/vue3-vite-ts)
+[![Deploy](https://github.com/lzngithub/vue3-vite-ts/workflows/deploy/badge.svg)](https://github.com/lzngithub/vue3-vite-ts/actions/workflows/deploy.yml)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-Airbnb-hotpink.svg)](https://github.com/lin-123/javascript)
 
 > 一套完美集成 Vite 2.x + Vue 3.x + TypeScript + Vue Router + Vuex + Axios + ESLint 等健壮的前端快速开发模板
@@ -58,5 +58,5 @@ npm run build
 
 ## 许可
 
-MIT Copyright © 2021 XPoet
+MIT Copyright © 2021 lzngithub
 
