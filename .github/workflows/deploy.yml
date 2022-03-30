@@ -4,26 +4,35 @@ on:
   push:
     branches: [main] # master 分支有 push 时触发
 
+# 任务
 jobs:
-  deploy:
+  # build-and-deploy 为任务的ID
+  build-and-deploy:
+    # 运行所需要的环境
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup Node.js v14.x
-        uses: actions/setup-node@v1
+      # 步骤名
+      - name: Checkout
+        # 使用的actions脚本，这里是官方提供的获取源码脚本
+        uses: actions/checkout@v2.3.1
+        # 这个为使用 JamesIves/github-pages-deploy-action脚本所需要的配置
         with:
-          node-version: '14.x'
+          persist-credentials: false
 
-      - name: Install
-        run: npm install # 安装依赖
+      # 执行npm脚本打包项目
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
 
-      - name: Build
-        run: npm run build # 打包
-
+      # 执行JamesIves/github-pages-deploy-action将项目发布到Github Pages
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3 # 使用部署到 GitHub pages 的 action
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          publish_dir: ./dist # 部署打包后的 dist 目录
-          github_token: ${{ secrets.DEPLOY }} # secret 名
-          commit_message: Update Vite2.x + Vue3.x + TypeScript # 部署时的 git 提交信息，自由填写
+          # 该workflow需要操作repo，因此需要一个密钥，下面会讲到如何获取这个密钥
+          ACCESS_TOKEN: ${{ secrets.DEPLOY }}
+          # 发布到的分支
+          BRANCH: gh-pages
+          # 要发布的文件夹
+          FOLDER: dist
